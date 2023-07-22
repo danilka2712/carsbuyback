@@ -4,13 +4,14 @@
     import Carts from "$lib/components/carts/carts.svelte";
     import type { SubmitFunction } from "@sveltejs/kit";
     import type { PageData, ActionData } from "./$types";
+    import { onMount } from "svelte";
 
     const carts = [
         {
             id: 1,
             name: "Авто всех марок",
             description:
-                "Cпециализируемся на покупке автомобилей любых марок и моделей, включая элитные, залоговые, кредитные, подержанные,битые, с запретом на регистрацию, коммерческие и другие",
+                "Мы покупаем автомобили всех марок и моделей, независимо от их состояния. Свяжитесь с нами сегодня, чтобы получить предложение!",
             image: "/1614546418_86-p-avto-na-belom-fone-100.webp",
             active: true,
         },
@@ -18,7 +19,7 @@
             id: 2,
             name: " Битые, не на ходу",
             description:
-                "Cпециализируемся на покупке автомобилей любых марок и моделей, включая элитные, залоговые, кредитные, подержанные,битые, с запретом на регистрацию, коммерческие и другие",
+                "Выкупаем битые автомобили и автомобили не на ходу. Мы предлагаем самые высокие цены на рынке и работаем быстро и без лишних хлопот.",
             image: "/Carsdtp.webp",
             active: true,
         },
@@ -26,7 +27,7 @@
             id: 3,
             name: "Без документов",
             description:
-                "Cпециализируемся на покупке автомобилей любых марок и моделей, включая элитные, залоговые, кредитные, подержанные,битые, с запретом на регистрацию, коммерческие и другие",
+                "Выкупим ваш автомобиль по хорошей цене, даже если у вас нет документов или он в залоге. Мы работаем с любыми автомобилями, независимо от их состояния или возраста.",
             image: "/kreditnie-1-1-1.webp",
             active: true,
         },
@@ -34,11 +35,55 @@
             id: 4,
             name: "Отечественные",
             description:
-                "Cпециализируемся на покупке автомобилей любых марок и моделей, включая элитные, залоговые, кредитные, подержанные,битые, с запретом на регистрацию, коммерческие и другие",
+                "Покупаем отечественные автомобили любых марок, моделей и годов выпуска. Неважно, в каком состоянии ваш автомобиль - мы выкупим его у вас уже сегодня.",
             image: "/lada_PNG101.webp",
             active: true,
         },
     ];
+    onMount(() => {
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+            showAll = false;
+        }
+    });
+    const sity = [
+        "Азовский район",
+        "Большереченский район",
+        "Большеуковский район",
+        "Горьковский район",
+        "Знаменский район",
+        "Исилькульский район",
+        "Калачинский район",
+        "Колосовский район",
+        "Кормиловский район",
+        "Крутинский район",
+        "Любинский район",
+        "Марьяновский район",
+        "Москаленский район",
+        "Муромцевский район",
+        "Называевский район",
+        "Нижнеомский район",
+        "Нововаршавский район",
+        "Одесский район",
+        "Оконешниковский район",
+        "Омский район",
+        "Павлоградский район",
+        "Полтавский район",
+        "Русско-Полянский район",
+        "Саргатский район",
+        "Седельниковский район",
+        "Таврический район",
+        "Тарский район",
+        "Тевризский район",
+        "Тюкалинский район",
+        "Усть-Ишимский район",
+        "Черлакский район",
+        "Шербакульский район",
+    ];
+    let showAll = true;
+
+    function toggleShowAll() {
+        showAll = !showAll;
+    }
     type LOAD = "ОТПРАВИТЬ" | "ОТПРАВКА" | "ОТПРАВЛЕНО";
     let loading: LOAD = "ОТПРАВИТЬ";
 
@@ -115,19 +160,19 @@
             купли-продажи, и расчет с вами наличными или переводом на карту.
         </p>
     </div>
-    <div class="grid xl:grid-cols-4 grid-cols-2 lg:mt-14 pt-12 gap-4 lg:gap-36">
+    <div class="grid xl:grid-cols-4 grid-cols-2 lg:mt-14 pt-12 gap-4 lg:gap-28">
         <div
-            class="flex items-center justify-center bg-black text-white animate-wiggle cursor-pointer h-58 relative"
+            class="flex items-center justify-center bg-[#f8ede3] animate-wiggle cursor-pointer h-62 relative p-4"
         >
             <p
-                class="text-center text-white sm:font-normal font-light sm:text-xl text-lg w-full p-5"
+                class="text-center sm:font-normal font-light sm:text-xl text-lg w-full p-5"
             >
                 Оставьте заявку на сайте
             </p>
         </div>
 
         <div
-            class="flex items-center justify-center bg-zinc-100/50 h-52 relative"
+            class="flex items-center justify-center bg-[#f1f6f5] h-52 relative p-4"
         >
             <p
                 class="text-center sm:font-normal font-light sm:text-xl text-lg p-5"
@@ -137,7 +182,7 @@
         </div>
 
         <div
-            class="flex items-center justify-center bg-zinc-100/50 h-52 relative"
+            class="flex items-center justify-center bg-[#f8f8f8] h-52 relative p-4"
         >
             <p
                 class="text-center sm:font-normal font-light sm:text-xl text-lg p-5"
@@ -147,7 +192,7 @@
         </div>
 
         <div
-            class="flex items-center justify-center bg-zinc-100/50 h-52 relative"
+            class="flex items-center justify-center bg-zinc-100/50 h-52 relative p-4"
         >
             <p
                 class="text-center sm:font-normal font-light sm:text-xl text-lg p-5"
@@ -158,16 +203,71 @@
     </div>
 </section>
 
-<section class="bg-white h-screen sm:px-16 px-4">
-    <form class="flex" method="POST" use:enhance={addTodo}>
-        <label for="phone">Phone Number:</label>
-        <input id="text" name="text" type="text" required />
+<section
+    class="bg-white sm:px-16 px-4 sm:pb-32 pb-24 flex flex-col-reverse sm:flex-row sm:gap-28 gap-14"
+>
+    <div class="grid grid-cols-2 sm:w-1/2 sm:gap-6 gap-4">
+        <div class="h-fit bg-slate-100">
+            <img class=" h-54" src="/images/skoda-octavia-2014.jpg" alt="" />
+        </div>
+        <div class="h-fit bg-slate-100">
+            <img class=" h-54" src="/images/renault-duster-2012.jpg" alt="" />
+        </div>
+        <div class="h-fit bg-slate-100">
+            <img class=" h-54" src="/images/santa-fe-2013.jpg" alt="" />
+        </div>
+        <div class="h-fit bg-slate-100">
+            <img class=" h-54" src="/images/renault-logan-2008.jpg" alt="" />
+        </div>
+    </div>
+    <div class=" sm:w-1/2 flex flex-col justify-center">
+        <h2 class="sm:text-5xl text-2xl sm:pb-0 mb-4 col-span-2">
+            Выкупленные авто
+        </h2>
+        <p class="text-gray-500 tracking-wide font-light sm:text-lg">
+            Специалист приезжает в назначенное время, осматривает автомобиль.
+            Если стоимость оценки вас устраивает, составляется договор
+            купли-продажи, и расчет с вами наличными или переводом на карту.
+        </p>
         <button
-            disabled={loading === "ОТПРАВЛЕНО"}
-            class="bg-black text-white p-3 rounded-full"
-            >{loading}
+            class="bg-black text-white p-4 w-fit sm:mt-10 mt-6 rounded-full px-8"
+            >Оставить заявку</button
+        >
+    </div>
+</section>
+<section class="bg-white sm:px-16 px-4 sm:pb-32 pb-24">
+    <div class="">
+        <h1
+            class=" lg:text-center lg:text-5xl text-3xl font-medium lg:mb-8 mb-4"
+        >
+            Выкупаем автомобили <br />
+            по всей области
+        </h1>
+    </div>
+    <div class="lg:mt-12 mt-8 w-full flex lg:flex-row flex-col justify-between">
+        <ul
+            class="grid list-disc marker:text-orange-200 marker:text-2xl lg:grid-cols-4 grid-cols-1 list-inside w-full gap-2"
+        >
+            {#if !showAll}
+                {#each sity.slice(0, 6) as s, i}
+                    <li class="lg:text-lg text-black/70">{s}</li>
+                {/each}
+            {:else}
+                {#each sity as s, i}
+                    <li class="lg:text-lg text-black/70">{s}</li>
+                {/each}
+            {/if}
+        </ul>
+        <button
+            aria-pressed="false"
+            type="button"
+            name="overflow"
+            class="text-green-600 w-fit hover:text-green-700 font-medium mt-6 flex lg:hidden"
+            on:click={toggleShowAll}
+        >
+            {showAll ? "Скрыть" : "Показать все"}
         </button>
-    </form>
+    </div>
 </section>
 
 <style lang="postcss">
