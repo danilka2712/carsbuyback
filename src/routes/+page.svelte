@@ -108,7 +108,7 @@
             class="flex sm:col-span-2 items-center justify-center bg-black text-white animate-wiggle cursor-pointer h-58 relative"
         >
             <p
-                class="text-center text-white font-medium sm:font-normal font-light sm:text-xl text-lg w-full p-5"
+                class="text-center text-white sm:font-normal font-light sm:text-xl text-lg w-full p-5"
             >
                 Оставьте заявку на сайте
             </p>
