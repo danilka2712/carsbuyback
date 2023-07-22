@@ -1,6 +1,9 @@
 <script lang="ts">
     import { Header, HeaderContent } from "$lib/components/Header/index.js";
     import "../app.css";
+    import { dev } from "$app/environment";
+    import { inject } from "@vercel/analytics";
+    inject({ mode: dev ? "development" : "production" });
 </script>
 
 <svelte:head>
