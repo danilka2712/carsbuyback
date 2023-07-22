@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { enhance } from "$app/forms";
     import CartsContent from "$lib/components/carts/carts-content.svelte";
     import Carts from "$lib/components/carts/carts.svelte";
 
@@ -53,15 +54,28 @@
     >
 </section>
 
-<section class="hidden bg-white px-16 pb-16">
-    <div class="flex items-center justify-between">
-        <img class="w-20" src="/cars/Honda.svg" alt="" />
-        <img class="w-20" src="/cars/Infiniti.svg" alt="" />
-        <img class="w-20" src="/cars/jeep.svg" alt="" />
-        <img class="w-20" src="/cars/KIA.svg" alt="" />
-        <img class="w-20" src="/cars/lada.svg" alt="" />
-        <img class="w-20" src="/cars/Nissan.svg" alt="" />
-        <img class="w-20" src="/cars/Volvo.svg" alt="" />
+<section class=" bg-white sm:px-16 px-4 pb-16">
+    <div class="flex items-center justify-between h-32 w-full">
+        <div class="items-wrap">
+            <div class="items marquee">
+                <img class="w-20 item" src="/cars/Honda.svg" alt="" />
+                <img class="w-20 item" src="/cars/Infiniti.svg" alt="" />
+                <img class="w-20 item" src="/cars/jeep.svg" alt="" />
+                <img class="w-20 item" src="/cars/KIA.svg" alt="" />
+                <img class="w-20 item" src="/cars/lada.svg" alt="" />
+                <img class="w-20 item" src="/cars/Nissan.svg" alt="" />
+                <img class="w-20 item" src="/cars/Volvo.svg" alt="" />
+            </div>
+            <div aria-hidden="true" class="items marquee">
+                <img class="w-20 item" src="/cars/Honda.svg" alt="" />
+                <img class="w-20 item" src="/cars/Infiniti.svg" alt="" />
+                <img class="w-20 item" src="/cars/jeep.svg" alt="" />
+                <img class="w-20 item" src="/cars/KIA.svg" alt="" />
+                <img class="w-20 item" src="/cars/lada.svg" alt="" />
+                <img class="w-20 item" src="/cars/Nissan.svg" alt="" />
+                <img class="w-20 item" src="/cars/Volvo.svg" alt="" />
+            </div>
+        </div>
     </div>
 </section>
 
@@ -154,10 +168,97 @@
     </div>
 </section>
 
-<section class="bg-white h-screen sm:px-16 px-4">1</section>
+<section class="bg-white h-screen sm:px-16 px-4">
+    <form class="flex" method="POST" use:enhance>
+        <label for="phone">Phone Number:</label>
+        <input id="text" name="text" type="text" required />
+        <button class="bg-black p-3 rounded-full">Submit</button>
+    </form>
+</section>
 
 <style lang="postcss">
     :global(html) {
         background-color: theme(colors.gray.50);
+    }
+
+    .items-wrap {
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        user-select: none;
+        gap: 20px;
+    }
+    .items-wrap:before,
+    .items-wrap:after {
+        content: "";
+        height: 100%;
+        top: 0;
+        width: 10%;
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .items-wrap:before {
+        left: 0;
+        background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    }
+    .items-wrap:after {
+        right: 0;
+        background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+        );
+    }
+    .items {
+        flex-shrink: 0;
+        display: flex;
+        gap: 20px;
+        counter-reset: item;
+        justify-content: space-around;
+        min-width: 100%;
+    }
+    .item {
+        flex: 0 0 auto;
+        width: 80px;
+        height: 80px;
+        counter-increment: item;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        font-weight: bold;
+        color: #fff;
+        margin: 10px 0;
+        transition: all 0.1s ease-in-out;
+    }
+    @media (max-width: 1140px) {
+        .item {
+            width: 50px;
+            height: 50px;
+        }
+        .items {
+            gap: 50px;
+        }
+        items-wrap {
+            gap: 50px;
+        }
+    }
+    .marquee {
+        animation: scroll 20s linear infinite;
+    }
+
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-100% - 20px));
+        }
     }
 </style>
