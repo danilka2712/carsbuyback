@@ -2,6 +2,8 @@
     import { enhance } from "$app/forms";
     import CartsContent from "$lib/components/carts/carts-content.svelte";
     import Carts from "$lib/components/carts/carts.svelte";
+    import type { SubmitFunction } from "@sveltejs/kit";
+    import type { PageData, ActionData } from "./$types";
 
     const carts = [
         {
@@ -37,6 +39,16 @@
             active: true,
         },
     ];
+    type LOAD = "ОТПРАВИТЬ" | "ОТПРАВКА" | "ОТПРАВЛЕНО";
+    let loading: LOAD = "ОТПРАВИТЬ";
+
+    const addTodo: SubmitFunction = ({ form, data, action, cancel }) => {
+        loading = "ОТПРАВКА";
+        return async ({ result, update }) => {
+            loading = "ОТПРАВЛЕНО";
+            await update();
+        };
+    };
 </script>
 
 <section class=" bg-white sm:pb-32 pb-24 sm:px-16 px-4">
@@ -80,7 +92,7 @@
 </section>
 
 <section class=" bg-white sm:px-16 px-4 sm:pb-32 pb-24">
-    <div class="grid lg:grid-cols-4 grid-cols-1 sm:gap-8 gap-4">
+    <div class="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 sm:gap-8 gap-4">
         {#each carts as сart}
             <Carts>
                 <CartsContent
@@ -103,9 +115,9 @@
             купли-продажи, и расчет с вами наличными или переводом на карту.
         </p>
     </div>
-    <div class="grid sm:grid-cols-11 grid-cols-2 lg:mt-14 pt-12 gap-2">
+    <div class="grid xl:grid-cols-4 grid-cols-2 lg:mt-14 pt-12 gap-36">
         <div
-            class="flex sm:col-span-2 items-center justify-center bg-black text-white animate-wiggle cursor-pointer h-58 relative"
+            class="flex items-center justify-center bg-black text-white animate-wiggle cursor-pointer h-58 relative"
         >
             <p
                 class="text-center text-white sm:font-normal font-light sm:text-xl text-lg w-full p-5"
@@ -113,11 +125,9 @@
                 Оставьте заявку на сайте
             </p>
         </div>
+
         <div
-            class="lg:flex hidden col-span-1 h-52 items-center justify-center"
-        />
-        <div
-            class="flex items-center justify-center sm:col-span-2 bg-zinc-100/50 h-52 relative"
+            class="flex items-center justify-center bg-zinc-100/50 h-52 relative"
         >
             <p
                 class="text-center sm:font-normal font-light sm:text-xl text-lg p-5"
@@ -125,12 +135,9 @@
                 Мы перезвоним вам течение 15 минут
             </p>
         </div>
-        <div
-            class="lg:flex hidden col-span-1 h-52 items-center justify-center"
-        />
 
         <div
-            class="flex items-center justify-center bg-zinc-100/50 h-52 sm:col-span-2 relative"
+            class="flex items-center justify-center bg-zinc-100/50 h-52 relative"
         >
             <p
                 class="text-center sm:font-normal font-light sm:text-xl text-lg p-5"
@@ -138,12 +145,9 @@
                 Приедем на осмотр в течение дня
             </p>
         </div>
-        <div
-            class=" col-span-1 h-52 items-center justify-center lg:flex hidden"
-        />
 
         <div
-            class="flex items-center justify-center bg-zinc-100/50 h-52 sm:col-span-2 relative"
+            class="flex items-center justify-center bg-zinc-100/50 h-52 relative"
         >
             <p
                 class="text-center sm:font-normal font-light sm:text-xl text-lg p-5"
@@ -155,10 +159,14 @@
 </section>
 
 <section class="bg-white h-screen sm:px-16 px-4">
-    <form class="flex" method="POST" use:enhance>
+    <form class="flex" method="POST" use:enhance={addTodo}>
         <label for="phone">Phone Number:</label>
         <input id="text" name="text" type="text" required />
-        <button class="bg-black p-3 rounded-full">Submit</button>
+        <button
+            disabled={loading === "ОТПРАВЛЕНО"}
+            class="bg-black text-white p-3 rounded-full"
+            >{loading}
+        </button>
     </form>
 </section>
 
