@@ -108,7 +108,7 @@
             class="flex sm:col-span-2 items-center justify-center bg-black text-white animate-wiggle cursor-pointer h-58 relative"
         >
             <p
-                class="text-center text-white font-medium sm:text-xl text-lg w-full p-5"
+                class="text-center text-white font-medium sm:font-normal font-light sm:text-xl text-lg w-full p-5"
             >
                 Оставьте заявку на сайте
             </p>
@@ -119,7 +119,9 @@
         <div
             class="flex items-center justify-center sm:col-span-2 bg-zinc-100/50 h-52 relative"
         >
-            <p class="text-center sm:text-xl text-lg p-5">
+            <p
+                class="text-center sm:font-normal font-light sm:text-xl text-lg p-5"
+            >
                 Мы перезвоним вам течение 15 минут
             </p>
         </div>
@@ -130,7 +132,9 @@
         <div
             class="flex items-center justify-center bg-zinc-100/50 h-52 sm:col-span-2 relative"
         >
-            <p class="text-center sm:text-xl text-lg p-5">
+            <p
+                class="text-center sm:font-normal font-light sm:text-xl text-lg p-5"
+            >
                 Приедем на осмотр в течение дня
             </p>
         </div>
@@ -141,7 +145,9 @@
         <div
             class="flex items-center justify-center bg-zinc-100/50 h-52 sm:col-span-2 relative"
         >
-            <p class="text-center sm:text-xl text-lg p-5">
+            <p
+                class="text-center sm:font-normal font-light sm:text-xl text-lg p-5"
+            >
                 Составим договор и рассчитаемся
             </p>
         </div>
