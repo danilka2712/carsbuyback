@@ -112,11 +112,6 @@
             >
                 Оставьте заявку на сайте
             </p>
-            <p
-                class="bg-white/90 w-6 h-6 rounded-full text-black items-center flex justify-center absolute top-4 left-4"
-            >
-                1
-            </p>
         </div>
         <div
             class="lg:flex hidden col-span-1 h-52 items-center justify-center"
@@ -126,11 +121,6 @@
         >
             <p class="text-center sm:text-xl text-lg p-5">
                 Мы перезвоним вам течение 15 минут
-            </p>
-            <p
-                class="bg-zinc-200 w-6 h-6 rounded-full items-center flex justify-center absolute top-4 left-4"
-            >
-                2
             </p>
         </div>
         <div
@@ -143,11 +133,6 @@
             <p class="text-center sm:text-xl text-lg p-5">
                 Приедем на осмотр в течение дня
             </p>
-            <p
-                class="bg-zinc-200 w-6 h-6 rounded-full items-center flex justify-center absolute top-4 left-4"
-            >
-                3
-            </p>
         </div>
         <div
             class=" col-span-1 h-52 items-center justify-center lg:flex hidden"
@@ -158,11 +143,6 @@
         >
             <p class="text-center sm:text-xl text-lg p-5">
                 Составим договор и рассчитаемся
-            </p>
-            <p
-                class="bg-zinc-200 w-6 h-6 rounded-full items-center flex justify-center absolute top-4 left-4"
-            >
-                4
             </p>
         </div>
     </div>
