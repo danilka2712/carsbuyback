@@ -115,7 +115,7 @@
             купли-продажи, и расчет с вами наличными или переводом на карту.
         </p>
     </div>
-    <div class="grid xl:grid-cols-4 grid-cols-2 lg:mt-14 pt-12 gap-36">
+    <div class="grid xl:grid-cols-4 grid-cols-2 lg:mt-14 pt-12 gap-6 lg:gap-36">
         <div
             class="flex items-center justify-center bg-black text-white animate-wiggle cursor-pointer h-58 relative"
         >
