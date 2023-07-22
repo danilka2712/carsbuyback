@@ -39,5 +39,7 @@
             >
         </HeaderContent>
     </Header>
-    <slot />
+    <main>
+        <slot />
+    </main>
 </div>
