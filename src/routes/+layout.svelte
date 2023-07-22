@@ -18,8 +18,8 @@
           "@context": "http://www.schema.org",
           "@type": "AutomotiveBusiness",
           "name": "Carsbuyback – Выкуп авто | Омск",
-          "url": "https://vykup-auto-omsk.ru/",
-          "logo": "https://vykup-auto-omsk.ru/logotype.svg",
+          "url": "https://carsbuyback.vercel.app/",
+          "logo": "https://carsbuyback.vercel.app/logotype.svg",
           "description": "Мы выкупим ваш автомобиль в любом состоянии, будь он битым, с пробегом или в кредите. Выезжаем на осмотр сразу после обращения и платим наличными сразу на месте. У нас более 300 положительных отзывов, и мы гарантируем, что вы получите лучшую цену за свой автомобиль.",
           "address": {
              "@type": "PostalAddress",
