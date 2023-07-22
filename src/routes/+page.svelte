@@ -54,7 +54,7 @@
     >
 </section>
 
-<section class=" bg-white sm:px-16 px-4 pb-16">
+<section class=" bg-white sm:px-16 px-4 pb-8">
     <div class="flex items-center justify-between h-32 w-full">
         <div class="items-wrap">
             <div class="items marquee">
@@ -239,14 +239,14 @@
     }
     @media (max-width: 1140px) {
         .item {
-            width: 50px;
-            height: 50px;
+            width: 70px;
+            height: 70px;
         }
         .items {
-            gap: 50px;
+            gap: 40px;
         }
-        items-wrap {
-            gap: 50px;
+        .items-wrap {
+            gap: 40px;
         }
     }
     .marquee {
