@@ -106,8 +106,8 @@
         Битые, неисправные, кредитные, в залоге, с запретами, без документов и
         птс, проблемные и т.д.
     </p>
-    <button class="bg-black text-white p-4 rounded-full px-8"
-        >Оставить заявку</button
+    <a href="#form" class="bg-black text-white p-4 rounded-full px-8"
+        >Оставить заявку</a
     >
 </section>
 
@@ -235,14 +235,12 @@
         >
     </div>
 </section>
-<section class="bg-white sm:px-16 px-4 sm:pb-32 pb-24">
+<section class="bg-white sm:px-16 sm:pb-24 pb-24 px-4">
     <div class="">
-        <h1
-            class=" lg:text-center lg:text-5xl text-3xl font-medium lg:mb-8 mb-4"
-        >
+        <h2 class="sm:text-5xl text-center text-2xl sm:pb-0 mb-4 col-span-2">
             Выкупаем автомобили <br />
             по всей области
-        </h1>
+        </h2>
     </div>
     <div class="lg:mt-12 mt-8 w-full flex lg:flex-row flex-col justify-between">
         <ul
@@ -267,6 +265,61 @@
         >
             {showAll ? "Скрыть" : "Показать все"}
         </button>
+    </div>
+</section>
+
+<section
+    id="form"
+    class="bg-white sm:px-16 px-4 sm:py-12 pb-24 flex flex-col-reverse sm:flex-row"
+>
+    <div class="w-1/2">1</div>
+    <div class="w-1/2">
+        <form class="bg-[#f1f6f5] p-14" action="" method="get">
+            <label class="block mb-7">
+                <span class="text-gray-700 text-xs uppercase">Ваше имя</span>
+                <input
+                    type="text"
+                    class="p-4 border border-zinc-200 mt-2 block w-full"
+                    placeholder=""
+                />
+            </label>
+            <label class="block mb-7">
+                <span class="text-gray-700 text-xs uppercase"
+                    >Марка/Модель автомобиля</span
+                >
+                <input
+                    type="text"
+                    class="p-4 border border-zinc-200 mt-2 block w-full"
+                    placeholder=""
+                />
+            </label>
+            <label class="block mb-7">
+                <span class="text-gray-700 text-xs uppercase"
+                    >Номер телефона</span
+                >
+                <input
+                    type="text"
+                    class="p-4 mt-2 border border-zinc-200 block w-full"
+                    placeholder=""
+                />
+            </label>
+
+            <label class="block mb-7">
+                <span class="text-gray-700 text-xs uppercase"
+                    >Как с вами связаться</span
+                >
+                <div class="mt-2 grid grid-cols-3">
+                    <button class="p-4 border border-zinc-200 bg-[#e4edec] mt-1"
+                        >По телефону</button
+                    >
+                    <button class="p-4 mt-1">Whatsapp</button>
+                    <button class="p-4 mt-1">Telegram</button>
+                </div>
+            </label>
+            <button class="bg-black text-white p-4 w-fit rounded-full px-8"
+                >Оставить заявку</button
+            >
+        </form>
     </div>
 </section>
 
