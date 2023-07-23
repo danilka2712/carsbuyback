@@ -1,5 +1,7 @@
 <script lang="ts">
     import { Header, HeaderContent } from "$lib/components/Header/index.js";
+    import { Footer, FooterContent } from "$lib/components/Footer/index.js";
+
     import "../app.css";
     import { dev } from "$app/environment";
     import { inject } from "@vercel/analytics";
@@ -46,4 +48,15 @@
     <main>
         <slot />
     </main>
+    <Footer>
+        <FooterContent>
+            <svelte:fragment slot="logotype"
+                ><img
+                    src="/logotype.svg"
+                    class="sm:w-48 w-44"
+                    alt=""
+                /></svelte:fragment
+            >
+        </FooterContent>
+    </Footer>
 </div>

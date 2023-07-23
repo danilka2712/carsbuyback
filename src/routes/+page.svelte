@@ -40,14 +40,7 @@
             active: true,
         },
     ];
-    let map;
     onMount(() => {
-        map = new maplibregl.Map({
-            container: "map",
-            style: "https://api.maptiler.com/maps/8d081a87-527e-4c3b-ab7f-10a7c83dbc2e/style.json?key=EfH47Bb8jzv9Pl57bst7", // style URL
-            center: [73.28512, 55.002846], // starting position [lng, lat]
-            zoom: 12,
-        });
         const marker = new maplibregl.Marker()
             .setLngLat([73.28512, 55.002846])
             .addTo(map);
@@ -113,7 +106,7 @@
     >
         Выкуп любых авто по Лучшей цене в Омске
     </h1>
-    <p class="sm:w-2/4 sm:text-2xl font-light sm:mb-12 mb-6">
+    <p class="sm:w-2/4 sm:text-2xl font-light mb-12">
         Битые, неисправные, кредитные, в залоге, с запретами, без документов и
         птс, проблемные и т.д.
     </p>
@@ -162,8 +155,8 @@
 
 <section class="bg-white sm:px-16 px-4 sm:pb-32 pb-24">
     <div class="grid sm:grid-cols-3 grid-cols-1">
-        <h2 class="sm:text-5xl text-2xl sm:pb-0 pb-4 col-span-2 sm:w-96">
-            Как происходит сделка
+        <h2 class="sm:text-5xl font-light text-2xl sm:pb-0 pb-4 col-span-2">
+            Как происходит <br /> сделка
         </h2>
         <p class="text-gray-500 tracking-wide font-light sm:text-lg col-span-1">
             Специалист приезжает в назначенное время, осматривает автомобиль.
@@ -232,7 +225,9 @@
         </div>
     </div>
     <div class=" sm:w-1/2 flex flex-col justify-center">
-        <h2 class="sm:text-5xl text-2xl sm:pb-0 mb-4 col-span-2">
+        <h2
+            class="sm:text-5xl font-light text-2xl sm:pb-0 pb-4 col-span-2 mb-4"
+        >
             Выкупленные авто
         </h2>
         <p class="text-gray-500 tracking-wide font-light sm:text-lg">
@@ -248,7 +243,9 @@
 </section>
 <section class="bg-white sm:px-16 sm:pb-24 pb-24 px-4">
     <div class="">
-        <h2 class="sm:text-5xl lg:text-center text-2xl sm:pb-0 mb-4 col-span-2">
+        <h2
+            class="sm:text-5xl sm:text-center font-light text-2xl sm:pb-0 pb-4 col-span-2 mb-4"
+        >
             Выкупаем автомобили <br />
             по всей области
         </h2>
@@ -281,7 +278,7 @@
 
 <section
     id="form"
-    class="bg-white sm:px-16 px-4 sm:py-12 pb-24 flex flex-col-reverse sm:flex-row"
+    class="bg-white sm:px-16 px-4 sm:py-12 sm:pb-32 flex flex-col-reverse sm:flex-row"
 >
     <div class="sm:w-1/2">1</div>
     <div class="sm:w-1/2">
@@ -319,31 +316,18 @@
                 <span class="text-gray-700 text-xs uppercase"
                     >Как с вами связаться</span
                 >
-                <div class="mt-2 grid grid-cols-3">
-                    <button
-                        class="p-4 border border-zinc-200 bg-[#e4edec] mt-1 sm:text-base text-xs"
-                        >По телефону</button
-                    >
-                    <button class="p-4 sm:text-base text-xs mt-1"
-                        >Whatsapp</button
-                    >
-                    <button class="p-4 sm:text-base text-xs mt-1"
-                        >Telegram</button
-                    >
-                </div>
+                <select class="p-4 mt-2 border border-zinc-200 block w-full">
+                    <option>Corporate event</option>
+                    <option>Wedding</option>
+                    <option>Birthday</option>
+                    <option>Other</option>
+                </select>
             </label>
             <button class="bg-black text-white p-4 w-fit rounded-full px-8"
                 >Оставить заявку</button
             >
         </form>
     </div>
-</section>
-
-<section
-    id="maps"
-    class="bg-white sm:px-16 px-4 sm:h-[75vh] h-[50vh] sm:py-12 pb-24 flex sm:flex-row"
->
-    <div class="lg:w-1/2 w-full"><div id="map" class="w-full h-full" /></div>
 </section>
 
 <style lang="postcss">
