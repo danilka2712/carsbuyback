@@ -5,7 +5,7 @@
     import type { SubmitFunction } from "@sveltejs/kit";
     import type { PageData, ActionData } from "./$types";
     import { onMount } from "svelte";
-
+    import maplibregl from "maplibre-gl";
     const carts = [
         {
             id: 1,
@@ -40,7 +40,18 @@
             active: true,
         },
     ];
+    let map;
     onMount(() => {
+        map = new maplibregl.Map({
+            container: "map",
+            style: "https://api.maptiler.com/maps/8d081a87-527e-4c3b-ab7f-10a7c83dbc2e/style.json?key=EfH47Bb8jzv9Pl57bst7", // style URL
+            center: [73.28512, 55.002846], // starting position [lng, lat]
+            zoom: 12,
+        });
+        const marker = new maplibregl.Marker()
+            .setLngLat([73.28512, 55.002846])
+            .addTo(map);
+
         if (/Mobi|Android/i.test(navigator.userAgent)) {
             showAll = false;
         }
@@ -237,7 +248,7 @@
 </section>
 <section class="bg-white sm:px-16 sm:pb-24 pb-24 px-4">
     <div class="">
-        <h2 class="sm:text-5xl text-center text-2xl sm:pb-0 mb-4 col-span-2">
+        <h2 class="sm:text-5xl lg:text-center text-2xl sm:pb-0 mb-4 col-span-2">
             Выкупаем автомобили <br />
             по всей области
         </h2>
@@ -272,9 +283,9 @@
     id="form"
     class="bg-white sm:px-16 px-4 sm:py-12 pb-24 flex flex-col-reverse sm:flex-row"
 >
-    <div class="w-1/2">1</div>
-    <div class="w-1/2">
-        <form class="bg-[#f1f6f5] p-14" action="" method="get">
+    <div class="sm:w-1/2">1</div>
+    <div class="sm:w-1/2">
+        <form class="bg-[#f1f6f5] sm:p-14 p-4 py-12" action="" method="get">
             <label class="block mb-7">
                 <span class="text-gray-700 text-xs uppercase">Ваше имя</span>
                 <input
@@ -321,6 +332,13 @@
             >
         </form>
     </div>
+</section>
+
+<section
+    id="maps"
+    class="bg-white sm:px-16 px-4 h-[75vh] sm:py-12 pb-24 flex flex-col-reverse sm:flex-row"
+>
+    <div class="w-1/2"><div id="map" class="w-full h-full" /></div>
 </section>
 
 <style lang="postcss">
