@@ -320,11 +320,16 @@
                     >Как с вами связаться</span
                 >
                 <div class="mt-2 grid grid-cols-3">
-                    <button class="p-4 border border-zinc-200 bg-[#e4edec] mt-1"
+                    <button
+                        class="p-4 border border-zinc-200 bg-[#e4edec] mt-1 sm:text-base text-xs"
                         >По телефону</button
                     >
-                    <button class="p-4 mt-1">Whatsapp</button>
-                    <button class="p-4 mt-1">Telegram</button>
+                    <button class="p-4 sm:text-base text-xs mt-1"
+                        >Whatsapp</button
+                    >
+                    <button class="p-4 sm:text-base text-xs mt-1"
+                        >Telegram</button
+                    >
                 </div>
             </label>
             <button class="bg-black text-white p-4 w-fit rounded-full px-8"
@@ -336,9 +341,9 @@
 
 <section
     id="maps"
-    class="bg-white sm:px-16 px-4 h-[75vh] sm:py-12 pb-24 flex flex-col-reverse sm:flex-row"
+    class="bg-white sm:px-16 px-4 sm:h-[75vh] h-[50vh] sm:py-12 pb-24 flex sm:flex-row"
 >
-    <div class="w-1/2"><div id="map" class="w-full h-full" /></div>
+    <div class="lg:w-1/2 w-full"><div id="map" class="w-full h-full" /></div>
 </section>
 
 <style lang="postcss">
