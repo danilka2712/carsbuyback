@@ -106,7 +106,7 @@
     >
         Выкуп любых авто по Лучшей цене в Омске
     </h1>
-    <p class="sm:w-2/4 sm:text-2xl font-light mb-12">
+    <p class="sm:w-2/4 sm:text-3xl font-light mb-12">
         Битые, неисправные, кредитные, в залоге, с запретами, без документов и
         птс, проблемные и т.д.
     </p>
@@ -155,7 +155,7 @@
 
 <section class="bg-white sm:px-16 px-4 sm:pb-32 pb-24">
     <div class="grid sm:grid-cols-3 grid-cols-1">
-        <h2 class="sm:text-5xl font-light text-2xl sm:pb-0 pb-4 col-span-2">
+        <h2 class="sm:text-5xl font-light text-3xl sm:pb-0 pb-4 col-span-2">
             Как происходит <br /> сделка
         </h2>
         <p class="text-gray-500 tracking-wide font-light sm:text-lg col-span-1">
@@ -225,9 +225,7 @@
         </div>
     </div>
     <div class=" sm:w-1/2 flex flex-col justify-center">
-        <h2
-            class="sm:text-5xl font-light text-2xl sm:pb-0 pb-4 col-span-2 mb-4"
-        >
+        <h2 class="sm:text-5xl font-light text-3xl sm:pb-0 pb-4 col-span-2">
             Выкупленные авто
         </h2>
         <p class="text-gray-500 tracking-wide font-light sm:text-lg">
@@ -244,7 +242,7 @@
 <section class="bg-white sm:px-16 sm:pb-24 pb-24 px-4">
     <div class="">
         <h2
-            class="sm:text-5xl sm:text-center font-light text-2xl sm:pb-0 pb-4 col-span-2 mb-4"
+            class="sm:text-5xl sm:text-center font-light text-3xl sm:pb-0 pb-4 col-span-2 mb-4"
         >
             Выкупаем автомобили <br />
             по всей области
@@ -252,7 +250,7 @@
     </div>
     <div class="lg:mt-12 mt-8 w-full flex lg:flex-row flex-col justify-between">
         <ul
-            class="grid list-disc marker:text-orange-200 marker:text-2xl lg:grid-cols-4 grid-cols-1 list-inside w-full gap-2"
+            class="grid list-disc marker:text-orange-200 marker:text-3xl lg:grid-cols-4 grid-cols-1 list-inside w-full gap-2"
         >
             {#if !showAll}
                 {#each sity.slice(0, 6) as s, i}
@@ -278,9 +276,20 @@
 
 <section
     id="form"
-    class="bg-white sm:px-16 px-4 sm:py-12 sm:pb-32 flex flex-col-reverse sm:flex-row"
+    class="bg-white sm:px-16 px-4 sm:py-12 sm:pb-32 flex sm:flex-row flex-col"
 >
-    <div class="sm:w-1/2">1</div>
+    <div class=" sm:w-1/2 flex flex-col justify-center sm:mb-0 mb-12">
+        <h2
+            class="sm:text-5xl font-light lg:w-2/3 text-3xl sm:pb-0 pb-4 col-span-2"
+        >
+            Оставьте заявку
+        </h2>
+        <p class="text-gray-500 lg:w-2/3 tracking-wide font-light sm:text-lg">
+            Не откладывайте на завтра то, что можно сделать сегодня! Оставьте
+            заявку на сайте прямо сейчас и мы выкупим ваш автомобиль уже
+            сегодня.
+        </p>
+    </div>
     <div class="sm:w-1/2">
         <form class="bg-[#f1f6f5] sm:p-14 p-4 py-12" action="" method="get">
             <label class="block mb-7">
@@ -317,10 +326,9 @@
                     >Как с вами связаться</span
                 >
                 <select class="p-4 mt-2 border border-zinc-200 block w-full">
-                    <option>Corporate event</option>
-                    <option>Wedding</option>
-                    <option>Birthday</option>
-                    <option>Other</option>
+                    <option>По телефону</option>
+                    <option>Whatsapp</option>
+                    <option>Telegram</option>
                 </select>
             </label>
             <button class="bg-black text-white p-4 w-fit rounded-full px-8"
