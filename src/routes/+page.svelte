@@ -40,11 +40,12 @@
             active: true,
         },
     ];
-    onMount(() => {
-        const marker = new maplibregl.Marker()
-            .setLngLat([73.28512, 55.002846])
-            .addTo(map);
+    let showAll = true;
 
+    function toggleShowAll() {
+        showAll = !showAll;
+    }
+    onMount(() => {
         if (/Mobi|Android/i.test(navigator.userAgent)) {
             showAll = false;
         }
@@ -83,11 +84,7 @@
         "Черлакский район",
         "Шербакульский район",
     ];
-    let showAll = true;
 
-    function toggleShowAll() {
-        showAll = !showAll;
-    }
     type LOAD = "ОТПРАВИТЬ" | "ОТПРАВКА" | "ОТПРАВЛЕНО";
     let loading: LOAD = "ОТПРАВИТЬ";
 
