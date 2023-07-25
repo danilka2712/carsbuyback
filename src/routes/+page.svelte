@@ -84,13 +84,16 @@
         "Шербакульский район",
     ];
 
-    type LOAD = "ОТПРАВИТЬ" | "ОТПРАВКА" | "ОТПРАВЛЕНО";
+    type LOAD = "ОТПРАВИТЬ" | "ОТПРАВКА..." | "ОТПРАВЛЕНО" | "ОЖИДАЙТЕ ЗВОНКА";
     let loading: LOAD = "ОТПРАВИТЬ";
 
     const newClaim: SubmitFunction = ({ form, data, action, cancel }) => {
-        loading = "ОТПРАВКА";
+        loading = "ОТПРАВКА...";
         return async ({ result, update }) => {
             loading = "ОТПРАВЛЕНО";
+            setTimeout(() => {
+                loading = "ОЖИДАЙТЕ ЗВОНКА";
+            }, 1500);
             await update();
         };
     };
