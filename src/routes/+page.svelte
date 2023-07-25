@@ -222,7 +222,7 @@
         </div>
     </div>
     <div class=" sm:w-1/2 flex flex-col justify-center">
-        <h2 class="sm:text-5xl font-light text-3xl sm:pb-0 pb-4 col-span-2">
+        <h2 class="sm:text-5xl font-light text-3xl sm:pb-0 mb-4 col-span-2">
             Выкупленные авто
         </h2>
         <p class="text-gray-500 tracking-wide font-light sm:text-lg">
@@ -263,7 +263,7 @@
             aria-pressed="false"
             type="button"
             name="overflow"
-            class="text-green-600 w-fit hover:text-green-700 font-medium mt-6 flex lg:hidden"
+            class="text-orange-400 w-fit hover:text-green-700 font-medium mt-6 flex lg:hidden"
             on:click={toggleShowAll}
         >
             {showAll ? "Скрыть" : "Показать все"}
@@ -277,7 +277,7 @@
 >
     <div class=" sm:w-1/2 flex flex-col justify-center sm:mb-0 mb-12">
         <h2
-            class="sm:text-5xl font-light lg:w-2/3 text-3xl sm:pb-0 pb-4 col-span-2"
+            class="sm:text-5xl font-light lg:w-2/3 text-3xl sm:pb-0 mb-4 col-span-2"
         >
             Оставьте заявку
         </h2>
