@@ -3,9 +3,8 @@
     import CartsContent from "$lib/components/carts/carts-content.svelte";
     import Carts from "$lib/components/carts/carts.svelte";
     import type { SubmitFunction } from "@sveltejs/kit";
-    import type { PageData, ActionData } from "./$types";
+    import type { PageData, ActionData } from "./$types.js";
     import { onMount } from "svelte";
-    import maplibregl from "maplibre-gl";
     const carts = [
         {
             id: 1,
@@ -88,7 +87,7 @@
     type LOAD = "ОТПРАВИТЬ" | "ОТПРАВКА" | "ОТПРАВЛЕНО";
     let loading: LOAD = "ОТПРАВИТЬ";
 
-    const addTodo: SubmitFunction = ({ form, data, action, cancel }) => {
+    const newClaim: SubmitFunction = ({ form, data, action, cancel }) => {
         loading = "ОТПРАВКА";
         return async ({ result, update }) => {
             loading = "ОТПРАВЛЕНО";
@@ -161,9 +160,9 @@
             купли-продажи, и расчет с вами наличными или переводом на карту.
         </p>
     </div>
-    <div class="grid xl:grid-cols-4 grid-cols-2 lg:mt-14 pt-12 gap-4 lg:gap-28">
+    <div class="grid xl:grid-cols-4 grid-cols-2 lg:mt-14 pt-12 gap-4 lg:gap-14">
         <div
-            class="flex items-center justify-center bg-[#f8ede3] animate-wiggle cursor-pointer h-62 relative p-4"
+            class="flex items-center justify-center bg-[#f8ede3] animate-wiggle cursor-pointer h-64 relative p-4"
         >
             <p
                 class="text-center sm:font-normal font-light sm:text-xl text-lg w-full p-5"
@@ -173,7 +172,7 @@
         </div>
 
         <div
-            class="flex items-center justify-center bg-[#f1f6f5] h-52 relative p-4"
+            class="flex items-center justify-center bg-[#f1f6f5] h-64 relative p-4"
         >
             <p
                 class="text-center sm:font-normal font-light sm:text-xl text-lg p-5"
@@ -183,7 +182,7 @@
         </div>
 
         <div
-            class="flex items-center justify-center bg-[#f8f8f8] h-52 relative p-4"
+            class="flex items-center justify-center bg-[#f8f8f8] h-64 relative p-4"
         >
             <p
                 class="text-center sm:font-normal font-light sm:text-xl text-lg p-5"
@@ -193,7 +192,7 @@
         </div>
 
         <div
-            class="flex items-center justify-center bg-zinc-100/50 h-52 relative p-4"
+            class="flex items-center justify-center bg-zinc-100/50 h-64 relative p-4"
         >
             <p
                 class="text-center sm:font-normal font-light sm:text-xl text-lg p-5"
@@ -205,7 +204,7 @@
 </section>
 
 <section
-    class="bg-white sm:px-16 px-4 sm:pb-32 pb-24 flex flex-col-reverse sm:flex-row sm:gap-28 gap-14"
+    class="bg-white sm:px-16 px-4 pb-24 flex flex-col-reverse sm:flex-row sm:gap-12 gap-14"
 >
     <div class="grid grid-cols-2 sm:w-1/2 sm:gap-6 gap-4">
         <div class="h-fit bg-slate-100">
@@ -221,19 +220,92 @@
             <img class=" h-54" src="/images/renault-logan-2008.jpg" alt="" />
         </div>
     </div>
-    <div class=" sm:w-1/2 flex flex-col justify-center">
+    <div class=" sm:w-1/2 flex flex-col justify-center pl-14">
         <h2 class="sm:text-5xl font-light text-3xl sm:pb-0 mb-4 col-span-2">
             Выкупленные авто
         </h2>
         <p class="text-gray-500 tracking-wide font-light sm:text-lg">
-            Специалист приезжает в назначенное время, осматривает автомобиль.
-            Если стоимость оценки вас устраивает, составляется договор
-            купли-продажи, и расчет с вами наличными или переводом на карту.
+            Мы выкупили более 400 автомобилей, многие из наших клиентов
+            возвращаются к нам и рекомендуют нас. Мы предлагаем быстрый и
+            простой процесс выкупа, а также честную цену за ваш автомобиль.
         </p>
         <button
             class="bg-black text-white p-4 w-fit sm:mt-10 mt-6 rounded-full px-8"
             >Оставить заявку</button
         >
+    </div>
+</section>
+<section
+    id="form"
+    class="bg-white sm:px-16 px-4 sm:py-12 sm:pb-32 flex sm:flex-row flex-col"
+>
+    <div class=" sm:w-1/2 flex flex-col justify-center sm:mb-0 mb-12">
+        <h2
+            class="sm:text-5xl font-light lg:w-2/3 text-3xl sm:pb-0 mb-4 col-span-2"
+        >
+            Оставьте заявку
+        </h2>
+        <p class="text-gray-500 lg:w-2/3 tracking-wide font-light sm:text-lg">
+            Не откладывайте на завтра то, что можно сделать сегодня! Оставьте
+            заявку на сайте прямо сейчас и мы выкупим ваш автомобиль уже
+            сегодня.
+        </p>
+    </div>
+    <div class="sm:w-1/2">
+        <form
+            class="bg-[#f1f6f5] sm:p-14 p-4 py-12"
+            method="POST"
+            use:enhance={newClaim}
+        >
+            <label class="block mb-7">
+                <span class="text-gray-700 text-xs uppercase">Ваше имя</span>
+                <input
+                    name="name"
+                    class="p-4 border border-zinc-200 mt-2 block w-full"
+                    placeholder="Ваше имя"
+                />
+            </label>
+            <label class="block mb-7">
+                <span class="text-gray-700 text-xs uppercase"
+                    >Марка/Модель автомобиля</span
+                >
+                <input
+                    name="auto"
+                    class="p-4 border border-zinc-200 mt-2 block w-full"
+                    placeholder="Укажите марку и модель вашего автомобиля"
+                />
+            </label>
+            <label class="block mb-7">
+                <span class="text-gray-700 text-xs uppercase"
+                    >Номер телефона</span
+                >
+                <input
+                    name="phone"
+                    class="p-4 mt-2 border border-zinc-200 block w-full"
+                    placeholder="Ваш номер телефона"
+                    required
+                />
+            </label>
+
+            <label class="block mb-7">
+                <span class="text-gray-700 text-xs uppercase"
+                    >Как с вами связаться</span
+                >
+                <select
+                    name="option"
+                    class="p-4 mt-2 border border-zinc-200 block w-full"
+                >
+                    <option>По телефону</option>
+                    <option>Whatsapp</option>
+                    <option>Telegram</option>
+                </select>
+            </label>
+            <button
+                type="submit"
+                class="bg-black text-white p-4 w-fit rounded-full px-8"
+                >{loading}</button
+            >
+        </form>
     </div>
 </section>
 <section class="bg-white sm:px-16 sm:pb-24 pb-24 px-4">
@@ -263,75 +335,11 @@
             aria-pressed="false"
             type="button"
             name="overflow"
-            class="text-orange-400 w-fit hover:text-green-700 font-medium mt-6 flex lg:hidden"
+            class=" w-fit font-medium mt-6 flex lg:hidden"
             on:click={toggleShowAll}
         >
             {showAll ? "Скрыть" : "Показать все"}
         </button>
-    </div>
-</section>
-
-<section
-    id="form"
-    class="bg-white sm:px-16 px-4 sm:py-12 sm:pb-32 flex sm:flex-row flex-col"
->
-    <div class=" sm:w-1/2 flex flex-col justify-center sm:mb-0 mb-12">
-        <h2
-            class="sm:text-5xl font-light lg:w-2/3 text-3xl sm:pb-0 mb-4 col-span-2"
-        >
-            Оставьте заявку
-        </h2>
-        <p class="text-gray-500 lg:w-2/3 tracking-wide font-light sm:text-lg">
-            Не откладывайте на завтра то, что можно сделать сегодня! Оставьте
-            заявку на сайте прямо сейчас и мы выкупим ваш автомобиль уже
-            сегодня.
-        </p>
-    </div>
-    <div class="sm:w-1/2">
-        <form class="bg-[#f1f6f5] sm:p-14 p-4 py-12" action="" method="get">
-            <label class="block mb-7">
-                <span class="text-gray-700 text-xs uppercase">Ваше имя</span>
-                <input
-                    type="text"
-                    class="p-4 border border-zinc-200 mt-2 block w-full"
-                    placeholder=""
-                />
-            </label>
-            <label class="block mb-7">
-                <span class="text-gray-700 text-xs uppercase"
-                    >Марка/Модель автомобиля</span
-                >
-                <input
-                    type="text"
-                    class="p-4 border border-zinc-200 mt-2 block w-full"
-                    placeholder=""
-                />
-            </label>
-            <label class="block mb-7">
-                <span class="text-gray-700 text-xs uppercase"
-                    >Номер телефона</span
-                >
-                <input
-                    type="text"
-                    class="p-4 mt-2 border border-zinc-200 block w-full"
-                    placeholder=""
-                />
-            </label>
-
-            <label class="block mb-7">
-                <span class="text-gray-700 text-xs uppercase"
-                    >Как с вами связаться</span
-                >
-                <select class="p-4 mt-2 border border-zinc-200 block w-full">
-                    <option>По телефону</option>
-                    <option>Whatsapp</option>
-                    <option>Telegram</option>
-                </select>
-            </label>
-            <button class="bg-black text-white p-4 w-fit rounded-full px-8"
-                >Оставить заявку</button
-            >
-        </form>
     </div>
 </section>
 
