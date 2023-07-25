@@ -220,7 +220,7 @@
             <img class=" h-54" src="/images/renault-logan-2008.jpg" alt="" />
         </div>
     </div>
-    <div class=" sm:w-1/2 flex flex-col justify-center pl-14">
+    <div class=" sm:w-1/2 flex flex-col justify-center lg:pl-14">
         <h2 class="sm:text-5xl font-light text-3xl sm:pb-0 mb-4 col-span-2">
             Выкупленные авто
         </h2>
@@ -237,7 +237,7 @@
 </section>
 <section
     id="form"
-    class="bg-white sm:px-16 px-4 sm:py-12 sm:pb-32 flex sm:flex-row flex-col"
+    class="bg-white sm:px-16 px-4 sm:py-12 sm:pb-32 pb-24 flex sm:flex-row flex-col"
 >
     <div class=" sm:w-1/2 flex flex-col justify-center sm:mb-0 mb-12">
         <h2
@@ -257,7 +257,7 @@
             method="POST"
             use:enhance={newClaim}
         >
-            <label class="block mb-7">
+            <label class="block sm:mb-7 mb-4">
                 <span class="text-gray-700 text-xs uppercase">Ваше имя</span>
                 <input
                     name="name"
@@ -265,7 +265,7 @@
                     placeholder="Ваше имя"
                 />
             </label>
-            <label class="block mb-7">
+            <label class="block sm:mb-7 mb-4">
                 <span class="text-gray-700 text-xs uppercase"
                     >Марка/Модель автомобиля</span
                 >
@@ -275,7 +275,7 @@
                     placeholder="Укажите марку и модель вашего автомобиля"
                 />
             </label>
-            <label class="block mb-7">
+            <label class="block sm:mb-7 mb-4">
                 <span class="text-gray-700 text-xs uppercase"
                     >Номер телефона</span
                 >
