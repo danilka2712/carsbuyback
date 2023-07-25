@@ -16,6 +16,7 @@
     />
     <meta property="og:title" content="Carsbuyback – Выкуп авто | Омск" />
     <meta property="og:type" content="website" />
+    <body>Verification: 8f3ce8e9c7d8744a</body>
     <script type="application/ld+json">
         {
           "@context": "http://www.schema.org",
