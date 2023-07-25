@@ -162,7 +162,7 @@
     </div>
     <div class="grid xl:grid-cols-4 grid-cols-2 lg:mt-14 pt-12 gap-4 lg:gap-14">
         <div
-            class="flex items-center justify-center bg-[#f8ede3] animate-wiggle cursor-pointer h-64 relative p-4"
+            class="flex items-center justify-center bg-[#f8ede3] animate-wiggle cursor-pointer lg:h-64 h-52 relative p-4"
         >
             <p
                 class="text-center sm:font-normal font-light sm:text-xl text-lg w-full p-5"
@@ -172,7 +172,7 @@
         </div>
 
         <div
-            class="flex items-center justify-center bg-[#f1f6f5] h-64 relative p-4"
+            class="flex items-center justify-center bg-[#f1f6f5] lg:h-64 h-52 relative p-4"
         >
             <p
                 class="text-center sm:font-normal font-light sm:text-xl text-lg p-5"
@@ -182,7 +182,7 @@
         </div>
 
         <div
-            class="flex items-center justify-center bg-[#f8f8f8] h-64 relative p-4"
+            class="flex items-center justify-center bg-[#f8f8f8] lg:h-64 h-52 relative p-4"
         >
             <p
                 class="text-center sm:font-normal font-light sm:text-xl text-lg p-5"
@@ -192,7 +192,7 @@
         </div>
 
         <div
-            class="flex items-center justify-center bg-zinc-100/50 h-64 relative p-4"
+            class="flex items-center justify-center bg-zinc-100/50 lg:h-64 h-52 relative p-4"
         >
             <p
                 class="text-center sm:font-normal font-light sm:text-xl text-lg p-5"
