@@ -12,25 +12,24 @@
     <title>Carsbuyback – Выкуп авто | Омск</title>
     <meta
         name="description"
-        content="Мы выкупим ваш автомобиль в любом состоянии, будь он битым, с пробегом или в кредите. Выезжаем на осмотр сразу после обращения и платим наличными сразу на месте. У нас более 300 положительных отзывов, и мы гарантируем, что вы получите лучшую цену за свой автомобиль."
+        content="Мы выкупим ваш автомобиль в любом состоянии, будь он битым, с пробегом или в кредите. Выезжаем на осмотр сразу после обращения и платим наличными сразу на месте. У нас более 400 положительных отзывов, и мы гарантируем, что вы получите лучшую цену за свой автомобиль."
     />
     <meta property="og:title" content="Carsbuyback – Выкуп авто | Омск" />
     <meta property="og:type" content="website" />
-    <body>Verification: 8f3ce8e9c7d8744a</body>
     <script type="application/ld+json">
         {
           "@context": "http://www.schema.org",
           "@type": "AutomotiveBusiness",
           "name": "Carsbuyback – Выкуп авто | Омск",
-          "url": "https://carsbuyback.vercel.app/",
-          "logo": "https://carsbuyback.vercel.app/logotype.svg",
+          "url": "https://carsbuyback.ru/",
+          "logo": "https://carsbuyback.ru/logotype.svg",
           "description": "Мы выкупим ваш автомобиль в любом состоянии, будь он битым, с пробегом или в кредите. Выезжаем на осмотр сразу после обращения и платим наличными сразу на месте. У нас более 300 положительных отзывов, и мы гарантируем, что вы получите лучшую цену за свой автомобиль.",
           "address": {
              "@type": "PostalAddress",
              "addressRegion": "Омск",
              "addressCountry": "Россия"
           },
-          "telephone": "+7 3812 592 639"
+          "telephone": "+7 908 800 21 87"
         }
     </script>
 </svelte:head>
