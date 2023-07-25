@@ -257,7 +257,7 @@
             method="POST"
             use:enhance={newClaim}
         >
-            <label class="block sm:mb-7 mb-4">
+            <label class="block mb-4">
                 <span class="text-gray-700 text-xs uppercase">Ваше имя</span>
                 <input
                     name="name"
@@ -265,7 +265,7 @@
                     placeholder="Ваше имя"
                 />
             </label>
-            <label class="block sm:mb-7 mb-4">
+            <label class="block mb-4">
                 <span class="text-gray-700 text-xs uppercase"
                     >Марка/Модель автомобиля</span
                 >
@@ -275,7 +275,7 @@
                     placeholder="Укажите марку и модель вашего автомобиля"
                 />
             </label>
-            <label class="block sm:mb-7 mb-4">
+            <label class="block mb-4">
                 <span class="text-gray-700 text-xs uppercase"
                     >Номер телефона</span
                 >
@@ -287,7 +287,7 @@
                 />
             </label>
 
-            <label class="block mb-7">
+            <label class="block mb-4">
                 <span class="text-gray-700 text-xs uppercase"
                     >Как с вами связаться</span
                 >
