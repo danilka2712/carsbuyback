@@ -20,7 +20,7 @@ export const actions = {
 
         console.log(data)
         const token = "6057931970:AAHT8ej7iNY2BTq-RWWN0Ftap5R4VuiUBQY";
-        const chatId = "596613157";
+        const chatId = "596613157,1809861870";
 
         const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
