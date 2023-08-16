@@ -20,24 +20,27 @@ export const actions = {
 
         console.log(data)
         const token = "6057931970:AAHT8ej7iNY2BTq-RWWN0Ftap5R4VuiUBQY";
-        const chatId = "596613157,1809861870";
+        const chatId = ["1809861870", "596613157"];
+
 
         const url = `https://api.telegram.org/bot${token}/sendMessage`;
+        for (let i = 0; i < chatId.length; i++) {
+            const options = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    chat_id: chatId[i],
+                    text: `Имя: ${name}\nМарка авто: ${auto}\nТелефон: ${phone}\nЧто с машиной: ${option}`,
+                    parse_mode: "html",
 
-        const options = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                chat_id: chatId,
-                text: `Имя: ${name}\nМарка авто: ${auto}\nТелефон: ${phone}\nЧто с машиной: ${option}`,
-                parse_mode: "html",
-            }),
-        };
-        await sleep(2000)
-        const response = await fetch(url, options);
-        console.log(response)
+                }),
+
+            };
+            const response = await fetch(url, options)
+
+        }
         return { success: true };
     }
 
